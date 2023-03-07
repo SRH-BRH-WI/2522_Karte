@@ -13,8 +13,9 @@ public class Main {
         karte2.ziehen();
         //System.out.println(karte1);
 
-        System.out.println(karte2.farbe);
-        karte2.wert = 8;                    // <- macht das Sinn? Ist es erlaubt???
+        System.out.println(karte2.getFarbe());
+//        karte2.wert = 8;                    // <- macht das Sinn? Ist es erlaubt???
+//        karte2.setWert(8);                    // so würde es gehen
         karte2.ausspielen();
     }
 }
