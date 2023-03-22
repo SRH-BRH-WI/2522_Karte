@@ -1,14 +1,9 @@
 public class Karte {
     // Attribute müssen private sein!!!
-    private int wert;
-    private String farbe;
-    private String format = "standard";
-
-    // Konstruktor
-    public /* kein Datentyp */ Karte() { //<- eher untypischer Konstruktor
-        this(0, "schwarz");
-        System.out.println("Eine Karte wurde erzeugt!");
-    }
+    private final int wert;
+    private final String farbe;
+    private final String format;
+    private static int anzahlKarten = 0;
 
     // klassicher Konstruktor, der alle Attribute initialisiert!
     // (mit Hilfe der Parameter)
@@ -16,10 +11,15 @@ public class Karte {
         this.wert = wert;
         this.farbe = farbe;
         this.format = format;
+        anzahlKarten++;
     }
 
     public Karte(int wert, String farbe) {
         this(wert, farbe, "standard");
+    }
+
+    public static int getAnzahlKarten() {
+        return anzahlKarten;
     }
 
     public String getFarbe() {  // <- Getter!
@@ -28,11 +28,6 @@ public class Karte {
 
     public int getWert() {
         return wert;
-    }
-
-    public void setWert(int wert) { // <- Setter!
-        if (wert >= 0 && wert <= 9)
-            this.wert = wert;
     }
 
     // Methoden
